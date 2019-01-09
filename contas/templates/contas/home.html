@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Título da página</title>
+</head>
+
+<body>
+    <h1>Seja bem vindo</h1>
+
+    <ul>
+        {% for transacao in transacoes %}
+        <li><a href="{% url 'url_update' transacao.id %}">{{ transacao.descricao }} - {{ transacao.data }} - {{ transacao.valor }} - {{ transacao.categoria }}</a></li>
+
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'url_nova' %}">Novo</a>
+</body>
+
+</html>
